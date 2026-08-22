@@ -14,7 +14,12 @@ public class Teste {
 		System.out.println(p.getName());
 		System.out.println(p.getSalario());
 		System.out.println(p.getLinguagem());
-
+		
+		Programador p2 = new Programador("Python", "Volmir Martar", 0.24);
+		
+		System.out.println(p2.getName());
+		System.out.println(p2.getSalario());
+		System.out.println(p2.getLinguagem());
 	}
 
 }

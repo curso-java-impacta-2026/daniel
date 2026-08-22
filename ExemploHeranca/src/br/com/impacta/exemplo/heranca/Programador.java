@@ -8,8 +8,9 @@ public class Programador extends Funcionario {
 		super();
 	}
 
-	public Programador(String name, double salario) {
+	public Programador(String linguagem, String name, double salario) {
 		super(name, salario);
+		this.linguagem = linguagem;
 	}
 
 	public Programador(String linguagem) {
