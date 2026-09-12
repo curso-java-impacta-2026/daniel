@@ -32,7 +32,7 @@ public class Teste {
 			
 			chave = (n1+n2) > 0 ? false : true;
 			
-		} catch (InputMismatchException e) {
+		} catch (InputMismatchException | NumberFormatException e) {
 			System.out.println("Apenas numeros!!");
 		} finally {
 			scan.close();			
