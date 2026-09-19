@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class ExercicioGravacao {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Digite uma frase: ");
 		try {
+			System.out.println("Digite uma frase: ");
 			String texto = scan.nextLine();
-			PrintWriter writer = new PrintWriter("C:\\doc1.txt");
+			PrintWriter writer = new PrintWriter("C:\\abc\\daniel\\doc1.txt");
 			writer.println(texto);
 			writer.close();
 		} catch (IOException e) {
