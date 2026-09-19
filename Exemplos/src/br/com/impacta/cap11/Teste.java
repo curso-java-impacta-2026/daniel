@@ -15,7 +15,7 @@ public class Teste {
 //			e.printStackTrace();
 //		}
 		Scanner scan = new Scanner(System.in);
-		
+		scan.close();
 		
 		int n1=0;
 		int n2=0;
