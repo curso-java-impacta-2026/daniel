@@ -6,6 +6,13 @@ public class MaioresSalarios {
 		// TODO Auto-generated method stub
 		double[] salariosBrutos = {1350.00,4320.15,8235.25,2500.55,1830.00,850.26,3614.29};
 		double[] salariosTop = {};
+		salariosTop = DoubleArrayUtils.filtraValores(salariosBrutos,(s)-> s>=3000);
+		
+//		for (double i : salariosTop) {
+//			System.out.println(i);
+//		}
+		DoubleArrayUtils.processaValores(salariosBrutos, (s)-> System.out.println(s));
+		
 	}
 
 }
