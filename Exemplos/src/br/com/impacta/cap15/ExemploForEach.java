@@ -18,4 +18,4 @@ public class ExemploForEach {
         
         cursos.forEach(c -> System.out.println("Curso: " + c));
     }
-}
+} 
