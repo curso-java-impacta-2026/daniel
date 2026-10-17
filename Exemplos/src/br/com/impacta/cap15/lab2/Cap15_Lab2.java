@@ -13,6 +13,6 @@ public class Cap15_Lab2 {
 		estudanteList.add(new Estudante("Gustavo",9.5,10));
 		
 		estudanteList.forEach(s -> s.setMedia((s.getNotaMatematica()+s.getNotaPortugues())/2));
-		estudanteList.forEach(s -> System.out.println(s.getNome() +": "+s.getMedia() ));
+		estudanteList.forEach(s -> System.out.println(s.getNome() +" -> Media: "+s.getMedia() ));
 	}
 }

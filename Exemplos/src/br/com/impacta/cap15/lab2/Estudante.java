@@ -6,9 +6,7 @@ public class Estudante {
 	private double notaPortugues;
 	private double media;
 	
-	
 	public Estudante(){}
-	
 	
 	public Estudante(String nome, double notaMatematica, double notaPortugues) {
 		super();
