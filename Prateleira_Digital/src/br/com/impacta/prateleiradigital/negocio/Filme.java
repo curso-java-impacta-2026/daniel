@@ -8,6 +8,7 @@ public class Filme implements Comparable<Filme> {
 		public static final double NOTA_MINIMA = 0;
 		public static final double NOTA_MAXIMA = 10;
 		
+		private int id;
 		private String titulo;
 		private String diretores;
 		private double nota;
@@ -46,11 +47,20 @@ public class Filme implements Comparable<Filme> {
 		}
 		
 		
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			if (id < 0) throw new IllegalArgumentException("Id inválido");
+			this.id = id;
+		}
+
 		public String getTitulo() {
 			return titulo;
 		}
 		public void setTitulo(String titulo) {
-			this.titulo = titulo;
+			this.titulo = textoObrigatorio(titulo, "Título");
 		}
 		
 		public String getDiretores() {
@@ -58,7 +68,7 @@ public class Filme implements Comparable<Filme> {
 		}
 		
 		public void setDiretores(String diretores) {
-			this.diretores = diretores;
+			this.diretores = textoObrigatorio(diretores, "Diretores");
 		}
 		
 		public double getNota() {
@@ -106,7 +116,7 @@ public class Filme implements Comparable<Filme> {
 		}
 		
 		public void setGeneros(String generos) {
-			this.generos = generos;
+			this.generos = textoObrigatorio(generos, "Gêneros");
 		}
 		
 		public int getNumVotos() {
@@ -128,6 +138,13 @@ public class Filme implements Comparable<Filme> {
 		
 		public void setUrl(String url) {
 			this.url = url;
+		}
+		
+		private String textoObrigatorio(String valor, String campo) {
+			if (valor == null || valor.isBlank() || valor.length() > 128) {
+				throw new IllegalArgumentException(campo + " inválido");
+			 }
+			 	return valor.trim();
 		}
 		
 		@Override

@@ -25,7 +25,7 @@ public class SortearConsole {
 		FilmeController controller = new FilmeController();
 		Filme filmeSorteado = null;
 		try {
-			filmeSorteado = controller.sortear(genero, diretor,notaMin,votosMin);
+			//filmeSorteado = controller.sortear(genero, diretor,notaMin,votosMin);
 			System.out.println("...");
 			if(filmeSorteado != null) {
 				System.out.printf("Filme %s foi sorteado!",filmeSorteado.getTitulo());

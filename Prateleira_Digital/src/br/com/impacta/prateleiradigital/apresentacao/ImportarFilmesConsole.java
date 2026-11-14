@@ -18,7 +18,7 @@ public class ImportarFilmesConsole {
 		
 		FilmeController controller = new FilmeController();
 		try {
-			controller.importarFilmes(pathFile);
+			//controller.importarFilmes(pathFile);
 			System.out.println("...");
 			System.out.println("Filmes importados com sucesso!");
 		} catch (Exception e) {

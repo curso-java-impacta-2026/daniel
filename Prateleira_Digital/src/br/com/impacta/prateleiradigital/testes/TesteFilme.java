@@ -5,7 +5,7 @@ import br.com.impacta.prateleiradigital.negocio.Filme;
 
 public class TesteFilme {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 //		testeSetAnoValido();
 //		testeSetAnoNegativo();
 //		testeSetDuracaoValida();
@@ -16,29 +16,29 @@ public class TesteFilme {
 //		testeSetNotaMaiorQueMaxima();
 //		testeSetNotaMenorQueMinima();
 		
-		FilmeController fc = new FilmeController();
+		//FilmeController fc = new FilmeController();
 		
-		fc.listagemFilmes().forEach(i -> System.out.println("Nome do Filme: "+ i.getTitulo()));
+		//fc.listagemFilmes().forEach(i -> System.out.println("Nome do Filme: "+ i.getTitulo()));
 		
-		System.out.println("Nome do Filme: "+fc.listagemFilmes(1));
+		//System.out.println("Nome do Filme: "+fc.listagemFilmes(1));
 		
 		
-		Filme filme = new Filme();
-		filme.setAno(1982);
-		filme.setDiretores("Steven Spielberg");
-		filme.setDuracao(200);
-		filme.setGeneros("Ficção");
-		filme.setNota(10);
-		filme.setNumVotos(1000);
-		filme.setTitulo("ET");
-		filme.setUrl("DDDDDDDDDDDDDDD.com");
+//		Filme filme = new Filme();
+//		filme.setAno(1982);
+//		filme.setDiretores("Steven Spielberg");
+//		filme.setDuracao(200);
+//		filme.setGeneros("Ficção");
+//		filme.setNota(10);
+//		filme.setNumVotos(1000);
+//		filme.setTitulo("ET");
+//		filme.setUrl("DDDDDDDDDDDDDDD.com");
 		
-		fc.cadastrarfilme(filme);
+		//fc.cadastrarfilme(filme);
 		
-		System.out.println("Nome do Filme: "+fc.listagemFilmes(3));
+		//System.out.println("Nome do Filme: "+fc.listagemFilmes(3));
+	}
 
 		
-	}
 	
 	
 
