@@ -15,7 +15,7 @@ public class FilmeController {
 	
 	FilmeDAO filmeDAO = new FilmeDAO();
 		
-	public int cadastrarfilme(Filme filme) throws SQLException{
+	public int cadastrarFilme(Filme filme) throws SQLException{
 			return filmeDAO.insert(filme);
 	}
 	

@@ -45,7 +45,7 @@ public class FilmeDAO {
 	}
 	
 	public List<Filme> select() throws SQLException{
-		String sql = "SELECT titulo, diretores, nota, duracao, ano, generos, numVotos, url FROM tb_filmes ORDER BY titulo";
+		String sql = "SELECT id, titulo, diretores, nota, duracao, ano, generos, numVotos, url FROM tb_filmes ORDER BY titulo";
 		List<Filme> filmes = new ArrayList<>();
 		
 		try(Connection con = conexao.getConnection();PreparedStatement ps = con.prepareStatement(sql); ResultSet rs = ps.executeQuery()){
@@ -54,6 +54,8 @@ public class FilmeDAO {
 						rs.getString("titulo"), rs.getString("diretores"), rs.getDouble("nota"), rs.getInt("duracao"),
 						rs.getInt("ano"), rs.getString("generos"), rs.getInt("numVotos"), rs.getString("url")
 						);
+				
+				f.setId(rs.getInt("id"));
 				filmes.add(f);
 				
 			}
