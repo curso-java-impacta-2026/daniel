@@ -1,6 +1,7 @@
 package br.com.impacta.prateleiradigital.persistencia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
@@ -37,7 +38,73 @@ public class FilmeDAO {
 			
 			return ps.executeUpdate();
 			
+		} catch(Exception e) {
+			
 		}
+		return 0;
 	}
+	
+	public List<Filme> select() throws SQLException{
+		String sql = "SELECT titulo, diretores, nota, duracao, ano, generos, numVotos, url FROM tb_filmes ORDER BY titulo";
+		List<Filme> filmes = new ArrayList<>();
+		
+		try(Connection con = conexao.getConnection();PreparedStatement ps = con.prepareStatement(sql); ResultSet rs = ps.executeQuery()){
+			while(rs.next()) {
+				Filme f = new Filme(
+						rs.getString("titulo"), rs.getString("diretores"), rs.getDouble("nota"), rs.getInt("duracao"),
+						rs.getInt("ano"), rs.getString("generos"), rs.getInt("numVotos"), rs.getString("url")
+						);
+				filmes.add(f);
+				
+			}
+			return filmes;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public int update(int id, Filme f) throws SQLException{
+		String sql = "UPDATE tb_filmes SET titulo=?, diretores=?, nota=?, duracao=?, ano=?, generos=?, numVotos=?, url=? WHERE id = ?";
+		
+		try(Connection con = conexao.getConnection();PreparedStatement ps = con.prepareStatement(sql);){
+			
+			ps.setString(1, f.getTitulo());
+			ps.setString(2, f.getDiretores());
+			ps.setDouble(3, f.getNota());
+			ps.setInt(4, f.getDuracao());
+			
+			ps.setInt(5, f.getAno());
+			ps.setString(6, f.getGeneros());
+			ps.setInt(7, f.getNumVotos());
+			if(f.getUrl() == null) ps.setNull(8, Types.VARCHAR); else ps.setString(8, f.getUrl());
+			
+			ps.setInt(9, id);
+			
+			return ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+	
+	public int delete(int id) throws SQLException{
+		String sql = "DELETE FROM tb_filmes WHERE id = ?";
+		
+		try(Connection con = conexao.getConnection();PreparedStatement ps = con.prepareStatement(sql);){
+			
+			ps.setInt(1, id);
+			
+			return ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+		}	
 
 }

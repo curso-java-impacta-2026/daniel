@@ -19,5 +19,16 @@ public class FilmeController {
 			return filmeDAO.insert(filme);
 	}
 	
+	public List<Filme> listaFilmes() throws SQLException{
+		return this.filmeDAO.select();
+	}
+	
+	public int atualizaFilme(int id, Filme f) throws SQLException {
+		return this.filmeDAO.update(id, f);
+	}
+	
+	public int deletarFilme(int id) throws SQLException {
+		return this.filmeDAO.delete(id);
+	}
 	
 }
